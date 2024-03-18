@@ -1,6 +1,7 @@
 package apiConnection;
 
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -13,7 +14,7 @@ import pojo.Movies;
 
 public class API {
 
-	private static String API_key = "your_api_key";
+	private static String API_key = "e6fd8697";
 	private static String url = null;
 	private static URI uri;
 	private static HttpClient httpClient = HttpClient.newHttpClient();
@@ -59,7 +60,7 @@ public class API {
     }
     
     public static CompletableFuture<Boolean> checkForInvalidMovie(String name) {
-    	String url = "http://www.omdbapi.com/?apikey=" + API_key + "&t=" + name;
+    
     	HttpRequest request = HttpRequest.newBuilder()
     			.uri(URI.create(url))
     			.build();
